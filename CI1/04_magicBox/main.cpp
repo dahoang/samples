@@ -1,7 +1,8 @@
-//03_inheritanceToyBox
+//04_magicBox
 #include <iostream>
 #include "PlainBox.h"
 #include "ToyBox.h"
+#include "MagicBox.h"
 
 using namespace std;
 
@@ -37,15 +38,23 @@ int main() {
     cout << "obj2:" << obj4.getItem() << endl;
 
     //TOYBOX
-    string toy1="Awesome toy 1";
-    string toy2="Awesome toy 2";
+    string toy1 = "Awesome toy 1";
+    string toy2 = "Awesome toy 2";
 
-    ToyBox<string> myToyBox(toy1,RED);
+    ToyBox<string> myToyBox(toy1, RED);
 
-    cout<<"My Toy box now contains: "<<myToyBox.getItem()<<endl;
+    cout << "My Toy box now contains: " << myToyBox.getItem() << endl;
     myToyBox.setItem(toy2);
-    cout<<"My Toy box now contains: "<<myToyBox.getItem()<<endl;
+    cout << "My Toy box now contains: " << myToyBox.getItem() << endl;
 
+    //MAGICBOX
+    PlainBox<string> cardBox;
+    cardBox = MagicBox<string>("TOY1");
+    cardBox.setItem("TOY2");
+    cout << "My Magic box now contains: " << cardBox.getItem() << endl;
+
+    cardBox.setItem("TOY3");
+    cout << "My Magic box now contains: " << cardBox.getItem() << endl;
 
     return 0;
 }
