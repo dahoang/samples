@@ -12,7 +12,7 @@ private:
 public:
     MagicBox();
 
-    MagicBox(const ItemType &theItem);
+    MagicBox(const  ItemType &theItem);
 
     void setItem(const ItemType &theItem);
 
